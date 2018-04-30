@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Synthetics Orchestrator</title>
+  <base href="/">
+  <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width">
+  <meta name="description" content="Synthetics Orchestrator">
+  <meta name="author" content="Srikar">
+  <link rel="stylesheet" type="text/css" href="listjobs.css">
+</head>
+
+<body>
+<div class="table-title">
+  <h3>Synthetic Jobs</h3>
+</div>
+<div ><a href="/">Back to Home</a><br><br><br></div>
+<div><a href="/downloadScripts">Download Scripts</a><br>
+Script download location is defined in server.conf file</div><br>
+<table class="table-fill">
+  <thead>
+  <tr>
+    <th class="text-left">Name</th>
+    <th class="text-left">UserEnabled</th>
+    <th class="text-left">SystemEnabled</th>
+    <th class="text-left">TimeoutInSeconds</th>
+  </tr>
+  </thead>
+  <tbody class="table-hover">
+  {{range .Items}}
+  <tr>
+    <td class="text-left"><a href="http://localhost:8080/jobDetail/{{.Id}}">{{.Name}}</a></td>
+    <td class="text-left">{{.UserEnabled}}</td>
+    <td class="text-left">{{.SystemEnabled}}</td>
+    <td class="text-left">{{.TimeoutSeconds}}</td>
+    <td class="text-left"><a href="http://localhost:8080/script/{{.Id}}">Download Script</a></td>
+  </tr>
+  {{end}}
+  </tbody>
+</table>
+</body>
+</html>

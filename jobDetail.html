@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Synthetics Orchestrator</title>
+  <base href="/">
+  <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width">
+  <meta name="description" content="Synthetics Orchestrator">
+  <meta name="author" content="Srikar">
+  <link rel="stylesheet" type="text/css" href="listjobs.css">
+</head>
+
+<body>
+<div class="table-title">
+  <br><h1>Details for Job - {{index . "description"}}</h1>
+</div>
+<div ><br><br><a href="/">Back to Home</a><br><br></div>
+<table class="table-fill">
+  <thead>
+  <tr>
+    <th class="text-left"><h3>Name</h3></th>
+    <th class="text-left"><h3>Value</h3></th>
+  </tr>
+  </thead>
+  <tbody class="table-hover">
+  {{range $key, $value := .}}
+  <tr>
+    <td class="text-left"><strong>{{ $key }}</strong></td>
+    <td class="text-left">{{ $value }}</td>
+  </tr>
+  {{end}}
+  </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "username" : "xxxx",
+  "password" : "xxx",
+  "url" : "https://scheduler.api.appdynamics.com/v1/schedule/",
+  "authorizationHeader" : "xxx"
+}

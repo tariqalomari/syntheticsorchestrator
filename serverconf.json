@@ -1,0 +1,5 @@
+{
+  "scriptsDownloadLocation" : "./CMEG/",
+  "port" : ":8080",
+  "url" : "https://scheduler.api.appdynamics.com/v1/schedule/"
+}

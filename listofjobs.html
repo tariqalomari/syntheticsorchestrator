@@ -6,17 +6,9 @@
   <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width">
   <meta name="description" content="Synthetics Orchestrator">
   <meta name="author" content="Srikar">
-  <link rel="stylesheet" type="text/css" href="/listjobs.css">
+  <link rel="stylesheet" type="text/css" href="listjobs.css">
 </head>
 
-<script type='text/javascript'>
- $(document).ready(function() {
-   
-  $('input[name=6a610c27-710f-47c9-b0c2-a06681a5917b]').change(function(){
-     alert('clicked');
-   });
-});
-</script>
 <body>
 <div class="table-title">
   <h3>Synthetic Jobs</h3>
@@ -37,12 +29,7 @@ Script download location is defined in server.conf file</div><br>
   {{range .Items}}
   <tr>
     <td class="text-left"><a href="http://localhost:8080/jobDetail/{{.Id}}">{{.Name}}</a></td>
-    <!--<td class="text-left">{{.UserEnabled}}</td>-->
-    <td class="text-left"> {{ if .UserEnabled }}
-<input type="checkbox" id="{{.Id}}" name="{{.Id}}" value="true" checked>
-{{ else }}
-<input type="checkbox" id="{{.Id}}" name="{{.Id}}" value="false">
-{{ end }}</td>
+    <td class="text-left">{{.UserEnabled}}</td>
     <td class="text-left">{{.SystemEnabled}}</td>
     <td class="text-left">{{.TimeoutSeconds}}</td>
     <td class="text-left"><a href="http://localhost:8080/script/{{.Id}}">Download Script</a></td>
